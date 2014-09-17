@@ -1,3 +1,5 @@
+require "JSON"
+
 class Grades
   def initialize(grades)
     @grades = grades
@@ -16,6 +18,11 @@ class Grades
   end
 
   def in_decline?
-    process.count(:down) >= 3
+    falls = 0
+    process.each do |change|
+      falls += 1 if change == :down
+      falls = 0 if change == :up
+    end
+    falls >= 3
   end
 end

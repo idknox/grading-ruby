@@ -29,4 +29,13 @@ describe "Grades" do
 
     expect(status).to eq(true)
   end
+
+  it "can parse a file of student grades" do
+    file = "./data/grades.json"
+
+    students = Students.new(file)
+
+    expect(students.in_decline_count).to eq(27)
+    # expect(students.not_in_decline_count).to eq(73)
+  end
 end
