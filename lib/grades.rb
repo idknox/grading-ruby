@@ -14,4 +14,8 @@ class Grades
     end
     output
   end
+
+  def in_decline?
+    process.count(:down) >= 3
+  end
 end

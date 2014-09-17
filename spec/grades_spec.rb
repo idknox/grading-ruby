@@ -21,4 +21,12 @@ describe "Grades" do
 
     expect(processed_grades).to eq(output)
   end
+
+  it "can determine if a student is in decline" do
+    input = [10, 10, 10, 9, 9, 8, 8, 8, 8, 7]
+    grades = Grades.new(input)
+    status = grades.in_decline?
+
+    expect(status).to eq(true)
+  end
 end
