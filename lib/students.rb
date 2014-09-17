@@ -14,4 +14,8 @@ class Students
   def in_decline_count
     process_all.select { |grades| grades.in_decline? }.length
   end
+
+  def not_in_decline_count
+    process_all.reject { |grades| grades.in_decline? }.length
+  end
 end

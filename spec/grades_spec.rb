@@ -36,6 +36,6 @@ describe "Grades" do
     students = Students.new(file)
 
     expect(students.in_decline_count).to eq(27)
-    # expect(students.not_in_decline_count).to eq(73)
+    expect(students.not_in_decline_count).to eq(73)
   end
 end
