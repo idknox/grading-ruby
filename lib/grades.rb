@@ -7,13 +7,9 @@ class Grades
     output=[]
     @grades.each_with_index do |grade, i|
       unless i == 0
-       if grade > @grades[i-1]
-         output << :up
-       elsif grade < @grades[i-1]
-         output << :down
-       else
-         output << :even
-       end
+        output << :up if grade > @grades[i-1]
+        output << :down if grade < @grades[i-1]
+        output << :even if grade == @grades[i-1]
       end
     end
     output
